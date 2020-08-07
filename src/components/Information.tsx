@@ -28,14 +28,14 @@ const CircleIcon = styled.div<{color: string}>`
 `
 
 interface Props {
-  setCurrentUser(user: User): void;
+  setUser(user: User): void;
   user: User;
 }
 
-const Information: React.FC<Props> = ({ setCurrentUser, user }) => {
+const Information: React.FC<Props> = ({ setUser, user }) => {
 
   const handleClick = () => {
-    setCurrentUser(user)
+    setUser(user)
   }
 
   return (

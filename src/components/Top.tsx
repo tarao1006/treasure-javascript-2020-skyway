@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 import Information from './Information'
 import User from '../model/user'
+import { users } from '../routes'
 
 const Wrapper = styled.div`
   margin: 0 auto;
@@ -16,12 +17,13 @@ const Top: React.FC<Props> = ({ setCurrentUser }) => {
 
   return (
     <Wrapper>
-      <Link to="/user/lilith">
-        <Information setCurrentUser={setCurrentUser} user={ new User('Lilith', 'red')} />
-      </Link>
-      <Link to="/user/adam">
-        <Information setCurrentUser={setCurrentUser} user={ new User('Adam', 'green')} />
-      </Link>
+      {
+        users.map(user => (
+          <Link to={`/user/${user.name.toLowerCase()}`} key={user.id}>
+            <Information setUser={setCurrentUser} user={user} />
+          </Link>
+        ))
+      }
     </Wrapper>
   )
 }

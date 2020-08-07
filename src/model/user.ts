@@ -5,8 +5,8 @@ export default class User {
   name: string;
   color: string;
 
-  constructor(name: string, color: string) {
-    this.id = uuid();
+  constructor(id: string, name: string, color: string) {
+    this.id = id;
     this.name = name;
     this.color = color;
   }
