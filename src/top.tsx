@@ -1,8 +1,15 @@
 import * as React from 'react'
+import styled from 'styled-components'
+
+const Wrapper = styled.div`
+  margin: 0 auto;
+`
 
 const Top: React.FC<{}> = () => {
   return (
-    <div>Top Page</div>
+    <Wrapper>
+      Top Page
+    </Wrapper>
   )
 }
 

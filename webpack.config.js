@@ -11,7 +11,13 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader'
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            plugins: ['babel-plugin-styled-components']
+          }}, {
+            loader: 'ts-loader'
+        }]
       }
     ]
   },
